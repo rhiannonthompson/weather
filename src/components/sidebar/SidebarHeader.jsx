@@ -4,7 +4,7 @@ import SearchInput from "./SearchInput";
 
 export default function SidebarHeader() {
   return (
-    <div className="flex pt-8 px-4 justify-between">
+    <div className="flex pt-8 px-6 md:px-8 justify-between">
       <SearchInput />
       <LocationIcon/>
     </div>

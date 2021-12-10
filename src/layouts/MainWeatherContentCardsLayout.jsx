@@ -1,13 +1,31 @@
 import React from "react";
+import MainWeatherContentCard from "../components/main/MainWeatherContentCard";
+import weatherStats from "../data/weatherStatsDummyData";
 
 export default function MainWeatherContentCardsLayout() {
   return (
     <>
-      <div className="bg-white w-32 h-28 mx-4">1</div>
-      <div className="bg-white w-32 h-28 mx-4">2</div>
-      <div className="bg-white w-32 h-28 mx-4">3</div>
-      <div className="bg-white w-32 h-28 mx-4">4</div>
-      <div className="bg-white w-32 h-28 mx-4">5</div>
+      <div className="mt-18 mb-6">
+        <h2 className="text-white text-2xl fon -semibold">
+          Today’s Hightlights
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+      
+        {weatherStats.map((stat) =>
+          <MainWeatherContentCard
+            key={stat.id}
+            weatherType={stat.weatherType}
+            title={stat.title}
+            measurement={stat.measurement}
+            unitOfMeasurement={stat.unitOfMeasurement}
+            direction={stat.direction ? stat.direction : null}
+          />
+        )}
+      </div>
+
+
     </>
   );
 }

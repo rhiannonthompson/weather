@@ -6,6 +6,7 @@ module.exports = {
       spacing: {
         '18': '4.5rem',
         '88': '22rem',
+        '94': '25rem',
         '104': '26rem',
         '112': '28rem',
         '130': '30rem',
@@ -14,6 +15,9 @@ module.exports = {
         '172': '40rem',
         '190': '48rem',
         '206': '58rem',
+        '218': '64rem',
+        '224': '84rem',
+        '300': '100rem',
       },
       backgroundImage: {
         'hero-pattern': "url('/src/assets/images/Cloud-background.png')",

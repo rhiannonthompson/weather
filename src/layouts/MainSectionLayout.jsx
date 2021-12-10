@@ -1,10 +1,14 @@
-import React from 'react'
-import MainWeatherContentCardsLayout from './MainWeatherContentCardsLayout'
+import React from "react";
+import FiveDayWeatherCardLayout from "./FiveDayWeatherCardLayout";
+import MainWeatherContentCardsLayout from "./MainWeatherContentCardsLayout";
 
-export default function MainSectionLayout({...props}) {
+export default function MainSectionLayout({ ...props }) {
   return (
-    <div className="flex justify-center mt-20">
-    <MainWeatherContentCardsLayout/>
-  </div>
-  )
+    <>
+      <div className="mt-10">
+        <FiveDayWeatherCardLayout/>
+      </div>
+      <MainWeatherContentCardsLayout/> 
+    </>
+  );
 }
