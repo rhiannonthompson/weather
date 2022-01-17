@@ -1,0 +1,42 @@
+export const defaultForecastData = [
+  {
+    date: 1,
+    weatherImage: "image",
+    description: "description",
+    temp: "10",
+    low: "4",
+    high: "6",
+  },
+  {
+    date: 2,
+    weatherImage: "image",
+    description: "description",
+    temp: "10",
+    low: "4",
+    high: "6",
+  },
+  {
+    date: 3,
+    weatherImage: "image",
+    description: "description",
+    temp: "10",
+    low: "4",
+    high: "6",
+  },
+  {
+    date: 4,
+    weatherImage: "image",
+    description: "description",
+    temp: "10",
+    low: "4",
+    high: "6",
+  },
+  {
+    date: 5,
+    weatherImage: "image",
+    description: "description",
+    temp: "10",
+    low: "4",
+    high: "6",
+  },
+];

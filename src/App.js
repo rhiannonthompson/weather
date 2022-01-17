@@ -1,10 +1,9 @@
-import React from "react"
 import PageLayout from "./layouts/PageLayout";
 
 function App() {
 
   return (
-    <PageLayout/>
+      <PageLayout/>
   );
 }
 

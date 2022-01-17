@@ -1,8 +1,5 @@
-import {splitBy, getAverage} from "../helperFunctions/miscHelpers";
+import {splitBy, getAverage} from "./miscHelpers";
 
-
-export default function useFormattedWeather() {
-  
   
   function getTemperatureRanges(data) {
     if (!data) {
@@ -66,9 +63,4 @@ export default function useFormattedWeather() {
     return output;
   }
 
-  return {
-    getTemperatureRanges,
-    getWeatherDates,
-    getFormattedWeatherDates,
-  }
-}
+export {getTemperatureRanges, getWeatherDates, getFormattedWeatherDates}

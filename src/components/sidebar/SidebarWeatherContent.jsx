@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { format } from "fecha";
 import getCurrentDate from "../../utilities/helperFunctions/getCurrentDate";
 import clearImage from "../../assets/images/Clear.png"
+import { TodaysWeatherState } from "../../state/providers/TodaysWeatherProvider";
 
-export default function SidebarWeatherContent({weatherData}) {
+export default function SidebarWeatherContent() {
   //todo will be done with state management
 
   const formatDate = format(getCurrentDate(), "ddd D MMM");
-  const { temp, description, cityName } = weatherData;
+  const todaysWeather = useContext(TodaysWeatherState);
+
+  const { temp, description, cityName } = todaysWeather;
 
   return (
     <div className="flex flex-col items-center mt-18 md:mt-28 lg:mt-20">
