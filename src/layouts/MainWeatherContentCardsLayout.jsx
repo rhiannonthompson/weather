@@ -6,12 +6,12 @@ export default function MainWeatherContentCardsLayout() {
   return (
     <>
       <div className="mt-18 mb-6">
-        <h2 className="text-white text-2xl fon -semibold">
-          Today’s Hightlights
+        <h2 className="text-white text-2xl font-semibold">
+          Highlights
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pb-12">
       
         {weatherStats.map((stat) =>
           <MainWeatherContentCard

@@ -16,16 +16,7 @@ export default function MainWeatherContentCard(props) {
     humidity: "humidity",
   };
 
-  const [unit, setUnit] = useState("metric");
-
-  // function handleSwitchUnitOfMeasurement() {
-  //   if (unit === UNITS_OF_MEASURE.imperial) {
-  //     setUnit("metric");
-  //   }
-  //   if (unit === UNITS_OF_MEASURE.metric) {
-  //     setUnit("imperial");
-  //   }
-  // }
+  const [unit] = useState("metric");
 
   return (
     <div className="col-span-1 bg-blue-800 text-white p-3 flex flex-col items-center place-content-center">
