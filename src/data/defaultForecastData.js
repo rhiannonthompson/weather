@@ -1,6 +1,7 @@
 export const defaultForecastData = [
   {
-    date: 1,
+    id: 1,
+    date: "Tomorrow",
     weatherImage: "image",
     description: "description",
     temp: "10",
@@ -8,7 +9,8 @@ export const defaultForecastData = [
     high: "6",
   },
   {
-    date: 2,
+    id: 2,
+    date: "Mon Jan 2",
     weatherImage: "image",
     description: "description",
     temp: "10",
@@ -16,7 +18,8 @@ export const defaultForecastData = [
     high: "6",
   },
   {
-    date: 3,
+    id: 3,
+    date: "Tue Jan 2",
     weatherImage: "image",
     description: "description",
     temp: "10",
@@ -24,7 +27,8 @@ export const defaultForecastData = [
     high: "6",
   },
   {
-    date: 4,
+    id: 4,
+    date: "Wed Jan 3",
     weatherImage: "image",
     description: "description",
     temp: "10",
@@ -32,7 +36,8 @@ export const defaultForecastData = [
     high: "6",
   },
   {
-    date: 5,
+    id: 5,
+    date: "Thu Jan 4",
     weatherImage: "image",
     description: "description",
     temp: "10",

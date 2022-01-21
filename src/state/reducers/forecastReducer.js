@@ -7,7 +7,7 @@ export default function forecastReducer(state, action) {
       const temperatureRanges = getTemperatureRanges(action.payload);
       const formattedWeatherDates = getFormattedWeatherDates(weatherDates, temperatureRanges);
       return [
-        ...formattedWeatherDates,
+        ...formattedWeatherDates
       ]
     }
     default:

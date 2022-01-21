@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 
-// rewrite from scratch 
+// todo rewrite with useReducer 
+
 export default function useFetch() {
  
   const [error, setError] = useState(null);
@@ -21,7 +22,6 @@ export default function useFetch() {
       if (urlTwo) {
         const responseTwo = await axios(urlTwo);
         setDataTwo(responseTwo.data);
-        // console.log(responseTwo.data);
       }
       setIsLoading(false);
     } catch (err) {

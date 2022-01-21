@@ -1,19 +1,16 @@
-const weatherStats = [
+export const defaultWeatherStats = [
   {
     id: 1,
     weatherType: "wind",
     title: "wind status",
     measurement: 7,
+    direction: 292.5,
+    icon: "w",
     
     unitOfMeasurement: {
       metric: "km/h",
       imperial: "mph",
-    },
-
-    direction: {
-      icon: "w",
-      text: "w"
-    }      
+    },     
   },
   {
     id: 2,
@@ -22,18 +19,16 @@ const weatherStats = [
     measurement: 75,
     unitOfMeasurement: {
       metric: "%",
-      imperial: "%",
-    },
-    
+    },   
   },
   {
     id: 3,
-    weatherType: "visability",
-    title: "visability",
-    measurement: 6.5,
+    weatherType: "visibility",
+    title: "visibility",
+    measurement: 6000,
     unitOfMeasurement: {
-      metric: "km/h",
-      imperial: "mph",
+      metric: "km",
+      imperial: "mp",
     },
   },
   {
@@ -43,9 +38,7 @@ const weatherStats = [
     measurement: 998,
     unitOfMeasurement: {
       metric: "mb",
-      imperial: "mb",
     },
   },
 ];
 
-export default weatherStats;

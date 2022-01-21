@@ -15,8 +15,9 @@ function getAverage(numberArray) {
   return parseFloat(average.toFixed(2), 10);
 }
 
-function roundNumber(number) {
-  return Math.round(number);
+function roundNumber(value, precision) {
+  var multiplier = Math.pow(10, precision || 0);
+  return Math.round(value * multiplier) / multiplier;
 }
 
 function formateString(string) {

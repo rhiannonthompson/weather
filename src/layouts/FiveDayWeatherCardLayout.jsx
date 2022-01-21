@@ -1,24 +1,32 @@
 import React, { useContext } from 'react'
 import FiveDayForecastCard from '../components/main/FiveDayForecastCard';
-// import weatherContents from "../data/weatherDummyData";
 import { ForecastState } from "../state/providers/ForecastProvider"
+import { roundNumber } from '../utilities/helperFunctions/miscHelpers';
 
 
 export default function FiveDayWeatherCardLayout() {
   
   const forecast = useContext(ForecastState);
-  console.log(forecast);
   
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-3 xl:grid-cols-5">
-    {forecast.map((content) => (
+    {forecast.map((content, index) => (
+      index === 0 ? 
       <FiveDayForecastCard
-        key={content.date}
+        key={index}
+        date={"Tomorrow"}
+        image={content.weatherImage}
+        tempLow={roundNumber(content.low, 1)}
+        tempHigh={roundNumber(content.high, 1)}
+        />
+        :
+        <FiveDayForecastCard
+        key={index}
         date={content.date}
         image={content.weatherImage}
-        tempLow={content.low}
-        tempHigh={content.high}
-      />
+        tempLow={roundNumber(content.low, 1)}
+        tempHigh={roundNumber(content.high, 1)}
+        />
     ))}
   </div>
   )
