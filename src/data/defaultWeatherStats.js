@@ -19,6 +19,7 @@ export const defaultWeatherStats = [
     measurement: 75,
     unitOfMeasurement: {
       metric: "%",
+      imperial: "%"
     },   
   },
   {
@@ -28,7 +29,7 @@ export const defaultWeatherStats = [
     measurement: 6000,
     unitOfMeasurement: {
       metric: "km",
-      imperial: "mp",
+      imperial: "mph",
     },
   },
   {
@@ -38,6 +39,7 @@ export const defaultWeatherStats = [
     measurement: 998,
     unitOfMeasurement: {
       metric: "mb",
+      imperial: "mb"
     },
   },
 ];

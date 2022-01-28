@@ -2,11 +2,14 @@ import React, {useContext} from "react";
 import MainWeatherContentCard from "../components/main/MainWeatherContentCard";
 import { WeatherStatsState } from "../state/providers/WeatherStatsProvider";
 import { WEATHER_TYPE } from "../state/constants/weatherType";
+import { UnitOfMeasureState } from "../state/providers/UnitOfMeasureProvider";
 
 export default function MainWeatherContentCardsLayout() {
 
   const weatherStats = useContext(WeatherStatsState);
+  const isMetric = useContext(UnitOfMeasureState);
 
+  // todo refactor to remove prop drilling
   return (
     <>
       <div className="mt-18 mb-6">
@@ -23,6 +26,7 @@ export default function MainWeatherContentCardsLayout() {
             unitOfMeasurement={stat.unitOfMeasurement}
             direction={stat.weatherType === WEATHER_TYPE.wind && stat.direction}
             icon={stat.weatherType === WEATHER_TYPE.wind && stat.icon}
+            isMetric={isMetric}
           />
         ))}
       </div>

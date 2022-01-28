@@ -40,8 +40,12 @@ function getWeatherDates(data) {
 }
 
 function getFormattedWeatherDates(weatherDates, temperatureRanges) {
+  
   // returns an array of dates
-  const dates = weatherDates.map((date) => new Date(date.dt_txt).toDateString().slice(0, 10));
+  const dates = weatherDates.map((date) =>
+    new Date(date.dt_txt).toDateString().slice(0, 10)
+  );
+
   //returns an array of description objects
   const weatherMetaData = weatherDates.map((date) => ({
     description: date.weather[0].description,
@@ -50,8 +54,9 @@ function getFormattedWeatherDates(weatherDates, temperatureRanges) {
 
   // zips data into one array
   const output = dates.map((date, idx) => ({
+    id: idx,
     date: date,
-    weatherImage: weatherMetaData[idx].icon,
+    icon: weatherMetaData[idx].icon,
     description: weatherMetaData[idx].description,
     temp: temperatureRanges[idx].average_temp,
     low: temperatureRanges[idx].min_temp,

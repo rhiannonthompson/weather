@@ -1,7 +1,7 @@
 export const defaultWeatherData = {
   temp: 10,
-  description: "Sunny",
+  description: "clear sky",
   cityName: "Your city",
-  icon: "icon",
+  icon: "10d",
 };
 
