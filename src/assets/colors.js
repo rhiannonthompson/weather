@@ -5,4 +5,6 @@ export const colors = {
   text_gray: "#A09FB1",
   text_white: "#E7E7EB",
   accent_yellow: "#FFEC65",
+  cloud_white: "#FAFAFA",
+  rain_blue: "#57A0EE",
 }

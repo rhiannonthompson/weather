@@ -1,15 +1,12 @@
-import clear from "../assets/images/Clear.png";
-import lightCloud from "../assets/images/LightCloud.png";
-import heavyCloud from "../assets/images/HeavyCloud.png";
-import shower from "../assets/images/Shower.png";
-import lightRain from "../assets/images/LightRain.png";
-import heavyRain from "../assets/images/HeavyRain.png";
-import sleet from "../assets/images/Sleet.png";
-import hail from "../assets/images/Hail.png";
-import snow from "../assets/images/Snow.png";
-import thunderstorm from "../assets/images/Thunderstorm.png";
-
-
+import clear from "../assets/images/day.svg";
+import lightCloud from "../assets/images/cloudy-day-3.svg";
+import heavyCloud from "../assets/images/cloudy.svg";
+import shower from "../assets/images/rainy-1.svg";
+import lightRain from "../assets/images/rainy-4.svg";
+import heavyRain from "../assets/images/rainy-6.svg";
+import hail from "../assets/images/rainy-7.svg";
+import snow from "../assets/images/snowy-5.svg";
+import thunderstorm from "../assets/images/thunder.svg";
 
 
 export function selectWeatherImageFromDescription(inputDescription, weatherImages) {
@@ -98,20 +95,16 @@ export const weatherTypeImages = [
     ],
   },
   {
-    weatherImage: sleet,
-    errorImage: clear,
-    descriptions: [
-      "Light shower sleet",
-      "Sleet",
-      "Shower sleet",
-      "Light rain and snow",
-      "Rain and snow",
-    ],
-  },
-  {
     weatherImage: hail,
     errorImage: clear,
-    descriptions: ["freezing rain"],
+    descriptions: [
+      "light shower sleet",
+      "sleet",
+      "shower sleet",
+      "light rain and snow",
+      "rain and snow",
+      "freezing rain",
+    ],
   },
   {
     weatherImage: snow,

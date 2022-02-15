@@ -11,6 +11,7 @@ module.exports = {
       "text-gray": "#A09FB1",
       "text-white": "#E7E7EB",
       "accent-yellow": "#FFEC65",
+      "rain-blue": "#57A0EE",
       "black": "#000000",
     },
     extend: {

@@ -1,6 +1,6 @@
 export const defaultWeatherData = {
   temp: 10,
-  description: "clear sky",
+  description: "light snow",
   cityName: "Your city",
   icon: "10d",
   isLoading: false,

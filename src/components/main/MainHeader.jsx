@@ -24,8 +24,8 @@ export default function MainHeader() {
         <button
           className={
             isMetricActive
-              ? "py-2 px-3 rounded-full font-semibold bg-text-white text-black cursor-default"
-              : "py-2 px-3 rounded-full font-semibold bg-primary-gray text-text-white hover:bg-text-gray" 
+              ? "py-2 px-3 rounded-full font-semibold bg-primary-gray text-black cursor-default"
+              : "py-2 px-3 rounded-full font-semibold bg-rain-blue text-text-white hover:bg-text-gray" 
           }
           onClick={handleClickToMetric}
         >
@@ -36,8 +36,8 @@ export default function MainHeader() {
         <button
           className={
             isImperialActive
-              ? "py-2 px-3 rounded-full font-semibold bg-text-white text-black cursor-default"
-              : "py-2 px-3 rounded-full font-semibold bg-primary-gray text-text-white hover:bg-text-gray"
+              ? "py-2 px-3 rounded-full font-semibold bg-primary-gray text-black cursor-default"
+              : "py-2 px-3 rounded-full font-semibold bg-rain-blue text-text-white hover:bg-text-gray"
           }
           onClick={handleClickToImperial}
         >

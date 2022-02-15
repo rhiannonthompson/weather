@@ -31,41 +31,46 @@ export default function SidebarWeatherContent() {
   const { primaryRegion, secondaryRegion } = editCityName(cityName);
 
   return (
-    <div className="flex flex-col items-center relative">
-          <div className="h-36 w-36 flex items-center mt-18">
-            <img alt="current-weather" src={weatherImage} className="w-full" />
-          </div>
-          <div className="ml-4 mt-16">
-            <p className="text-8xl font-light text-text-white">
-              {isMetric
-                ? roundNumber(parseFloat(temp), 0)
-                : roundNumber(convertToFahrenheit(parseFloat(temp)), 1)}
-              <span className="text-4xl text-text-gray">
-                {isMetric ? "°C" : "°F"}
-              </span>
-            </p>
-          </div>
-          <div className="mt-16">
-            <p className="text-4xl font-semibold text-text-gray">
-              {formattedDescription}
-            </p>
-          </div>
-          <div className="mt-4 flex w-2/3 justify-center text-xl font-semibold text-text-gray">
-            <div className="text-right">Today</div>
-            <div className="text-center px-4">-</div>
-            <div className="text-left">{formattedDate}</div>
-          </div>
-          <div className="mt-16">
-            <p className="text-3xl text-center font-semibold text-text-white">
-              {primaryRegion}
-            </p>
-            <p className="mt-4 text-xl text-center font-semibold text-text-gray">
-              {secondaryRegion}
-            </p>
+    <div className="flex flex-col items-center">
+      <div className="flex items-center">
+        <div className="mt-8">
+          <img
+            alt="current-weather"
+            src={weatherImage}
+            className="h-64 w-84"
+          />
+        </div>
+      </div>
+      <div className="ml-4 mt-4">
+        <p className="text-8xl font-light text-text-white">
+          {isMetric
+            ? roundNumber(parseFloat(temp), 0)
+            : roundNumber(convertToFahrenheit(parseFloat(temp)), 1)}
+          <span className="text-4xl text-text-gray">
+            {isMetric ? "°C" : "°F"}
+          </span>
+        </p>
+      </div>
+      <div className="mt-16">
+        <p className="text-4xl font-semibold text-text-gray">
+          {formattedDescription}
+        </p>
+      </div>
+      <div className="mt-4 flex w-2/3 justify-center text-xl font-semibold text-text-gray">
+        <div className="text-right">Today</div>
+        <div className="text-center px-4">-</div>
+        <div className="text-left">{formattedDate}</div>
+      </div>
+      <div className="mt-16">
+        <p className="text-3xl text-center font-semibold text-text-white">
+          {primaryRegion}
+        </p>
+        <p className="mt-4 text-xl text-center font-semibold text-text-gray">
+          {secondaryRegion}
+        </p>
       </div>
       {isLoading && <Loading textSize={"text-2xl"} />}
-      {error && <ErrorModel error={error}/>}
-
+      {error && <ErrorModel error={error} />}
     </div>
   );
 }

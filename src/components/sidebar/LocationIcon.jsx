@@ -5,7 +5,7 @@ export default function LocationIcon({setUserGeoLocation}) {
   return (
   <button
     onClick={setUserGeoLocation}
-    className="bg-primary-gray rounded-full w-10 h-10 flex justify-center items-center"
+    className="bg-rain-blue rounded-full w-10 h-10 flex justify-center items-center"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

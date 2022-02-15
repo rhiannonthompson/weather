@@ -14,13 +14,13 @@ export default function FiveDayForecastCard(props) {
   );
 
   return (
-    <div className="bg-secondary-dark-blue flex flex-col items-center relative">
-      <p className="text-text-white text-xl mt-4">{date}</p>
+    <div className="bg-secondary-dark-blue flex flex-col items-center py-4 relative">
+      <p className="text-text-white text-xl">{date}</p>
 
-      <div className="h-24 md:h-20 mt-4">
-        <img className="w-18 md:w-14 my-2" alt="weather" src={weatherImage} />
+      <div>
+        <img className="w-24 h-24 my-2" alt="weather" src={weatherImage} />
       </div>
-      <div className="flex justify-center my-4">
+      <div className="flex justify-center">
         <p className="mx-2 text-lg text-text-gray">
           {isMetric
             ? `${roundNumber(parseFloat(tempLow), 1)}°C`
