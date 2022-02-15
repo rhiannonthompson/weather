@@ -5,57 +5,67 @@ import { TodaysWeatherState } from "../../state/providers/TodaysWeatherProvider"
 import {
   formateString,
   roundNumber,
+  editCityName,
 } from "../../utilities/helperFunctions/miscHelpers";
 import { UnitOfMeasureState } from "../../state/providers/UnitOfMeasureProvider";
 import { convertToFahrenheit } from "../../utilities/helperFunctions/convertToImperial";
 import { selectWeatherImageFromDescription } from "../../data/weatherImages";
 import { weatherTypeImages } from "../../data/weatherImages";
+import Loading from "../common/Loading";
+import ErrorModel from "../common/ErrorModel";
 
 export default function SidebarWeatherContent() {
   const todaysWeather = useContext(TodaysWeatherState);
   const isMetric = useContext(UnitOfMeasureState);
 
-  const { temp, description, cityName} = todaysWeather;
+  const { temp, description, cityName, isLoading, error } = todaysWeather;
 
   const formattedDate = format(getCurrentDate(), "ddd D MMM");
 
   const formattedDescription = formateString(description);
-  const formattedCityName = formateString(cityName);
-  const weatherImage = selectWeatherImageFromDescription(description, weatherTypeImages);
+  const weatherImage = selectWeatherImageFromDescription(
+    description,
+    weatherTypeImages
+  );
 
+  const { primaryRegion, secondaryRegion } = editCityName(cityName);
 
   return (
-    <div className="flex flex-col items-center mt-18 md:mt-28 lg:mt-20">
-      <img
-        className="w-36 md:w-52 lg:w-44"
-        alt="current-weather"
-        src={weatherImage}
-      />
-      <div className="mt-10 md:mt-18 ml-4">
-        <p className="text-8xl font-semibold text-white">
-          {isMetric
-            ? roundNumber(parseFloat(temp), 0)
-            : roundNumber(convertToFahrenheit(parseFloat(temp)), 1)}
-          <span className="text-5xl text-gray-400">
-            {isMetric ? "°C" : "°F"}
-          </span>
-        </p>
+    <div className="flex flex-col items-center relative">
+          <div className="h-36 w-36 flex items-center mt-18">
+            <img alt="current-weather" src={weatherImage} className="w-full" />
+          </div>
+          <div className="ml-4 mt-16">
+            <p className="text-8xl font-light text-text-white">
+              {isMetric
+                ? roundNumber(parseFloat(temp), 0)
+                : roundNumber(convertToFahrenheit(parseFloat(temp)), 1)}
+              <span className="text-4xl text-text-gray">
+                {isMetric ? "°C" : "°F"}
+              </span>
+            </p>
+          </div>
+          <div className="mt-16">
+            <p className="text-4xl font-semibold text-text-gray">
+              {formattedDescription}
+            </p>
+          </div>
+          <div className="mt-4 flex w-2/3 justify-center text-xl font-semibold text-text-gray">
+            <div className="text-right">Today</div>
+            <div className="text-center px-4">-</div>
+            <div className="text-left">{formattedDate}</div>
+          </div>
+          <div className="mt-16">
+            <p className="text-3xl text-center font-semibold text-text-white">
+              {primaryRegion}
+            </p>
+            <p className="mt-4 text-xl text-center font-semibold text-text-gray">
+              {secondaryRegion}
+            </p>
       </div>
-      <div className="mt-10 md:mt-18">
-        <p className="text-3xl font-semibold text-gray-400">
-          {formattedDescription}
-        </p>
-      </div>
-      <div className="flex w-2/3 justify-center mt-10 md:mt-18 text-xl font-semibold text-gray-400 mb-6">
-        <div className="text-right">Today</div>
-        <div className="text-center px-4">-</div>
-        <div className="text-left">{formattedDate}</div>
-      </div>
-      <div>
-        <p className="text-3xl font-semibold text-gray-400">
-          {formattedCityName}
-        </p>
-      </div>
+      {isLoading && <Loading textSize={"text-2xl"} />}
+      {error && <ErrorModel error={error}/>}
+
     </div>
   );
 }

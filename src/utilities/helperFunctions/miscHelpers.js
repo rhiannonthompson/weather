@@ -21,8 +21,31 @@ function roundNumber(value, precision) {
 }
 
 function formateString(string) {
-  let upperCase = string.slice(0, 1).toUpperCase().concat(string.slice(1));
+  let lowerCase = string.toLowerCase();
+  let upperCase = lowerCase.slice(0, 1).toUpperCase().concat(lowerCase.slice(1));
   return upperCase;
 }
 
-export { splitBy, getAverage, roundNumber, formateString };
+function editCityName(region) {
+  const cityNameRegions = region.split(/\s-\s|,/);
+  const primaryRegion = cityNameRegions[0];
+  const secondaryRegions = cityNameRegions.slice(1);
+  const ABBREVIATED_LENGTH = 5;
+  let secondaryRegion = "";
+
+  if (secondaryRegions.length > 1) {
+    if (secondaryRegions[0].length < ABBREVIATED_LENGTH) {
+      secondaryRegion = secondaryRegions[0] + secondaryRegions[secondaryRegions.length - 1];
+    } else {
+      secondaryRegion = secondaryRegions[secondaryRegions.length - 1].toString();
+    }
+  } else {
+    secondaryRegion = secondaryRegions.toString();
+  }
+  return {
+    primaryRegion: primaryRegion,
+    secondaryRegion: secondaryRegion,
+  }
+}
+
+export { splitBy, getAverage, roundNumber, formateString, editCityName };

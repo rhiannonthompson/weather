@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import MainWeatherContentCard from "../components/main/MainWeatherContentCard";
 import { WeatherStatsState } from "../state/providers/WeatherStatsProvider";
 import { WEATHER_TYPE } from "../state/constants/weatherType";
@@ -13,10 +13,10 @@ export default function MainWeatherContentCardsLayout() {
   return (
     <>
       <div className="mt-18 mb-6">
-        <h2 className="text-white text-2xl font-semibold">Highlights</h2>
+        <h2 className="text-text-white text-3xl font-light">Highlights</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pb-12">
         {weatherStats.map((stat) => (
           <MainWeatherContentCard
             key={stat.id}
@@ -27,6 +27,7 @@ export default function MainWeatherContentCardsLayout() {
             direction={stat.weatherType === WEATHER_TYPE.wind && stat.direction}
             icon={stat.weatherType === WEATHER_TYPE.wind && stat.icon}
             isMetric={isMetric}
+            isLoading={stat.isLoading}
           />
         ))}
       </div>
