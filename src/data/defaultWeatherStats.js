@@ -1,6 +1,7 @@
 export const defaultWeatherStats = [
   {
     id: 1,
+    isLoading: false,
     weatherType: "wind",
     title: "wind status",
     measurement: 7,
@@ -14,6 +15,7 @@ export const defaultWeatherStats = [
   },
   {
     id: 2,
+    isLoading: false,
     weatherType: "humidity",
     title: "humidity",
     measurement: 75,
@@ -24,6 +26,7 @@ export const defaultWeatherStats = [
   },
   {
     id: 3,
+    isLoading: false,
     weatherType: "visibility",
     title: "visibility",
     measurement: 6000,
@@ -34,6 +37,7 @@ export const defaultWeatherStats = [
   },
   {
     id: 4,
+    isLoading: false,
     weatherType: "pressure",
     title: "air pressure",
     measurement: 998,

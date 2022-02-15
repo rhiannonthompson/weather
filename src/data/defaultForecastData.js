@@ -1,6 +1,7 @@
 export const defaultForecastData = [
   {
     id: 1,
+    isLoading: false,
     date: "Tomorrow",
     icon: "10d",
     description: "thunderstorm",
@@ -10,6 +11,7 @@ export const defaultForecastData = [
   },
   {
     id: 2,
+    isLoading: false,
     date: "Mon Jan 2",
     icon: "10d",
     description: "moderate rain",
@@ -19,6 +21,7 @@ export const defaultForecastData = [
   },
   {
     id: 3,
+    isLoading: false,
     date: "Tue Jan 2",
     icon: "10d",
     description: "light rain",
@@ -28,6 +31,7 @@ export const defaultForecastData = [
   },
   {
     id: 4,
+    isLoading: true,
     date: "Wed Jan 3",
     icon: "10d",
     description: "shower rain",
@@ -37,6 +41,7 @@ export const defaultForecastData = [
   },
   {
     id: 5,
+    isLoading: false,
     date: "Thu Jan 4",
     icon: "10d",
     description: "overcast clouds",

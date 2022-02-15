@@ -7,6 +7,7 @@ import {
   roundNumber,
 } from "../../utilities/helperFunctions/miscHelpers";
 import { convertToMiles } from "../../utilities/helperFunctions/convertToImperial";
+import Loading from "../common/Loading";
 
 export default function MainWeatherContentCard(props) {
   const {
@@ -17,6 +18,7 @@ export default function MainWeatherContentCard(props) {
     direction,
     icon,
     isMetric,
+    isLoading,
   } = props;
 
   const formattedTitle = formateString(title);
@@ -31,7 +33,7 @@ export default function MainWeatherContentCard(props) {
   const formattedMeasure = getFormattedMeasurements(measurement);
 
   return (
-    <div className="col-span-1 bg-blue-800 text-white p-3 flex flex-col items-center place-content-center">
+    <div className="relative col-span-1 bg-secondary-dark-blue text-text-white p-3 flex flex-col items-center place-content-center">
       <h3 className="text-xl">{formattedTitle}</h3>
       <div className="text-5xl my-4 font-bold">
         {weatherType === WEATHER_TYPE.wind ||
@@ -50,6 +52,8 @@ export default function MainWeatherContentCard(props) {
       {weatherType === WEATHER_TYPE.humidity && (
         <HumidityBar measurement={measurement} />
       )}
+      {isLoading && <Loading textSize={"text-xl"} />}
+
     </div>
   );
 }
