@@ -12,8 +12,8 @@ export default function MainWeatherContentCardsLayout() {
   // todo refactor to remove prop drilling
   return (
     <>
-      <div className="mt-18 mb-6">
-        <h2 className="text-text-white text-3xl font-light">Highlights</h2>
+      <div className="mt-12 mb-6">
+        <h2 className="text-text-white text-2xl font-light">Highlights</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pb-12">

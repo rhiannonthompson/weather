@@ -5,7 +5,7 @@ import MainWeatherContentCardsLayout from "./MainWeatherContentCardsLayout";
 export default function MainSectionLayout() {
   return (
     <>
-      <div className="mt-10">
+      <div className="mt-8">
         <FiveDayWeatherCardLayout/>
       </div>
       <MainWeatherContentCardsLayout/> 

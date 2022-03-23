@@ -13,13 +13,13 @@ export default function PageLayout() {
       <ForecastProvider>
         <WeatherStatsProvider>
           <div className="lg:flex flex-col lg:flex-row relative font-Raleway">
-            <div className="bg-secondary-dark-blue min-h-screen lg:flex-none lg:w-104 xl:w-130">
+            <div className="bg-secondary-dark-blue min-h-screen lg:flex-none lg:w-104">
               <TodaysWeatherProvider>
                 <SidebarLayout />
               </TodaysWeatherProvider>
             </div>
             <div className="bg-main-dark-blue min-h-screen justify-center lg:flex-grow z-10">
-              <div className="mx-6 md:mx-8 lg:mx-10 xl:mx-32">
+              <div className="mx-6 md:mx-8 lg:mx-10 xl:mx-24">
                 <MainHeader />
                 <MainSectionLayout />
               </div>

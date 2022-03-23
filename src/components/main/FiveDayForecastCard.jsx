@@ -15,24 +15,24 @@ export default function FiveDayForecastCard(props) {
 
   return (
     <div className="bg-secondary-dark-blue flex flex-col items-center py-4 relative">
-      <p className="text-text-white text-xl">{date}</p>
+      <p className="text-text-white text-lg">{date}</p>
 
       <div>
         <img className="w-24 h-24 my-2" alt="weather" src={weatherImage} />
       </div>
       <div className="flex justify-center">
-        <p className="mx-2 text-lg text-text-gray">
+        <p className="mx-2 text-md text-text-gray">
           {isMetric
             ? `${roundNumber(parseFloat(tempLow), 1)}°C`
             : `${roundNumber(convertToFahrenheit(parseFloat(tempLow)), 1)}°F`}
         </p>
-        <p className="mx-2 text-lg text-text-white">
+        <p className="mx-2 text-md text-text-white">
           {isMetric
             ? `${roundNumber(parseFloat(tempHigh), 1)}°C`
             : `${roundNumber(convertToFahrenheit(parseFloat(tempHigh)), 1)}°F`}
         </p>
       </div>
-      {isLoading && <Loading textSize={"text-xl"} />}
+      {isLoading && <Loading textSize={"text-md"} />}
     </div>
   );
 }

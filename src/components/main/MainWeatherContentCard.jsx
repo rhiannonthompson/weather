@@ -33,16 +33,16 @@ export default function MainWeatherContentCard(props) {
   const formattedMeasure = getFormattedMeasurements(measurement);
 
   return (
-    <div className="relative col-span-1 bg-secondary-dark-blue text-text-white p-3 flex flex-col items-center place-content-center">
+    <div className="relative col-span-1 bg-secondary-dark-blue text-text-white p-3 flex flex-col items-center justify-start">
       <h3 className="text-xl">{formattedTitle}</h3>
-      <div className="text-5xl my-4 font-bold">
+      <div className="text-xl my-4 font-bold">
         {weatherType === WEATHER_TYPE.wind ||
         weatherType === WEATHER_TYPE.visibility
           ? isMetric
             ? formattedMeasure
             : roundNumber(convertToMiles(parseInt(formattedMeasure)), 1)
           : formattedMeasure}
-        <span className="text-xl ml-2">
+        <span className="text-md ml-2">
           {isMetric ? unitOfMeasurement.metric : unitOfMeasurement.imperial}
         </span>
       </div>
@@ -52,7 +52,7 @@ export default function MainWeatherContentCard(props) {
       {weatherType === WEATHER_TYPE.humidity && (
         <HumidityBar measurement={measurement} />
       )}
-      {isLoading && <Loading textSize={"text-xl"} />}
+      {isLoading && <Loading textSize={"text-md"} />}
 
     </div>
   );

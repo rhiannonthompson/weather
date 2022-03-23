@@ -37,12 +37,12 @@ export default function SidebarWeatherContent() {
           <img
             alt="current-weather"
             src={weatherImage}
-            className="h-64 w-84"
+            className="h-60 w-84"
           />
         </div>
       </div>
       <div className="ml-4 mt-4">
-        <p className="text-8xl font-light text-text-white">
+        <p className="text-7xl font-light text-text-white">
           {isMetric
             ? roundNumber(parseFloat(temp), 0)
             : roundNumber(convertToFahrenheit(parseFloat(temp)), 1)}
@@ -52,20 +52,20 @@ export default function SidebarWeatherContent() {
         </p>
       </div>
       <div className="mt-12">
-        <p className="text-3xl font-semibold text-text-gray">
+        <p className="text-2xl font-semibold text-text-gray">
           {formattedDescription}
         </p>
       </div>
-      <div className="mt-4 flex w-2/3 justify-center text-xl font-semibold text-text-gray">
+      <div className="mt-4 flex w-2/3 justify-center text-lg font-semibold text-text-gray">
         <div className="text-right">Today</div>
         <div className="text-center px-4">-</div>
         <div className="text-left">{formattedDate}</div>
       </div>
       <div className="mt-12">
-        <p className="text-2xl text-center font-semibold text-text-white">
+        <p className="text-xl text-center font-semibold text-text-white">
           {primaryRegion}
         </p>
-        <p className="mt-4 text-xl text-center font-semibold text-text-gray">
+        <p className="mt-4 text-md text-center font-semibold text-text-gray">
           {secondaryRegion}
         </p>
       </div>

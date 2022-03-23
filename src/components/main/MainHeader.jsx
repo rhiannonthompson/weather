@@ -19,13 +19,13 @@ export default function MainHeader() {
   }
 
   return (
-    <div className="flex pt-8 justify-end text-xl">
+    <div className="flex pt-8 justify-end text-md">
       <div className="mx-6">
         <button
           className={
-            isMetricActive
-              ? "py-2 px-3 rounded-full font-semibold bg-primary-gray text-black cursor-default"
-              : "py-2 px-3 rounded-full font-semibold bg-rain-blue text-text-white hover:bg-text-gray" 
+            !isMetricActive
+              ? "py-2 px-3 rounded-full font-semibold bg-primary-gray text-black hover:bg-text-gray"
+              : "py-2 px-3 rounded-full font-semibold bg-rain-blue text-text-white cursor-default" 
           }
           onClick={handleClickToMetric}
         >
@@ -35,9 +35,9 @@ export default function MainHeader() {
       <div>
         <button
           className={
-            isImperialActive
-              ? "py-2 px-3 rounded-full font-semibold bg-primary-gray text-black cursor-default"
-              : "py-2 px-3 rounded-full font-semibold bg-rain-blue text-text-white hover:bg-text-gray"
+            !isImperialActive
+              ? "py-2 px-3 rounded-full font-semibold bg-primary-gray text-black hover:bg-text-gray"
+              : "py-2 px-3 rounded-full font-semibold bg-rain-blue text-text-white  cursor-default"
           }
           onClick={handleClickToImperial}
         >
