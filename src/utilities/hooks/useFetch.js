@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-// todo rewrite with useReducer 
 
 export default function useFetch() {
  
@@ -17,10 +16,10 @@ export default function useFetch() {
     setDataOne(null);
     setDataTwo(null);
     try {
-      const responseOne = await axios(urlOne);
+      const responseOne = await axios(urlOne); // lambda function call - weather.js
       setDataOne(responseOne.data);
       if (urlTwo) {
-        const responseTwo = await axios(urlTwo);
+        const responseTwo = await axios(urlTwo); // lambda function call -forecast.js
         setDataTwo(responseTwo.data);
       }
       setIsLoading(false);
