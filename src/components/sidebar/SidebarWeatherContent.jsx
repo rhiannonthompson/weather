@@ -33,7 +33,7 @@ export default function SidebarWeatherContent() {
   return (
     <div className="flex flex-col items-center">
       <div className="flex items-center">
-        <div className="mt-8">
+        <div className="mt-6">
           <img
             alt="current-weather"
             src={weatherImage}
@@ -51,8 +51,8 @@ export default function SidebarWeatherContent() {
           </span>
         </p>
       </div>
-      <div className="mt-16">
-        <p className="text-4xl font-semibold text-text-gray">
+      <div className="mt-12">
+        <p className="text-3xl font-semibold text-text-gray">
           {formattedDescription}
         </p>
       </div>
@@ -61,8 +61,8 @@ export default function SidebarWeatherContent() {
         <div className="text-center px-4">-</div>
         <div className="text-left">{formattedDate}</div>
       </div>
-      <div className="mt-16">
-        <p className="text-3xl text-center font-semibold text-text-white">
+      <div className="mt-12">
+        <p className="text-2xl text-center font-semibold text-text-white">
           {primaryRegion}
         </p>
         <p className="mt-4 text-xl text-center font-semibold text-text-gray">
