@@ -3,7 +3,6 @@ module.exports = {
     "./src/components/**/*.jsx",
     "./src/layouts/*.jsx",
     "./src/state/**/*.jsx",
-    "./public/index.html"
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
